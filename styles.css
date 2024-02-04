@@ -7,7 +7,7 @@
 
 body {
     background-color: #121212;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .sidebar {
@@ -15,30 +15,43 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 300px;
-    background-color: #000000;
+    width: 295px;
+    background: linear-gradient(to bottom,  #1B080A, #2D0D10);
     padding: 24px;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+}
+
+.sidebar .logo {
+    width: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar .logo img {
-    width: 130px;
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 160px;
 }
 
 .sidebar .navigation ul {
     list-style: none;
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .sidebar .navigation ul li {
-    padding: 10px 0px;
+    padding: 10px 40px;
 }
 
 .sidebar .navigation ul li a {
-    color: #b3b3b3;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 200;
+    font-size: 30px;
 }
+
 
 .sidebar .navigation ul li .fa {
     font-size: 20px;
@@ -47,6 +60,12 @@ body {
 
 .sidebar .navigation ul li a:hover {
     color: #ffffff;
+    font-weight: 800;
+}
+
+.sidebar .navigation ul li a:visited {
+    color: #ffffff;
+    font-weight: 800;
 }
 
 .sidebar .policies {
@@ -80,9 +99,9 @@ body {
 
 .topbar {
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-end;
     background-color: #000;
-    padding: 14px 30px;
+    padding: 0px 30px;
 }
 
 .topbar .prev-next-buttons button {
@@ -97,10 +116,34 @@ body {
     margin-right: 10px;
 }
 
-.topbar .navbar {
-    display: flex;
-    align-items: center;
+.topbar .logout {
+    color: #7a7a7a;
+    width: 10%;
+    border-radius: 100%;
+    font-size: 18px;
+    border: 0px;
+    background-color: #090909;
+    margin-right: 10px;
 }
+
+.topbar .logout a {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.topbar .navbar {
+    padding: 14px 30px;
+}
+
+.topbar .navbar p {
+    color: #ffffff;
+    list-style: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 
 .topbar .navbar ul {
     list-style: none;
@@ -108,8 +151,23 @@ body {
 
 .topbar .navbar ul li {
     display: inline-block;
-    margin: 0px 8px;
-    width: 70px;
+    margin: 0px 5px;
+    width: 100px;
+}
+
+.topbar .navbar ul li .rightspace{
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    padding-left: 50px ;
+}
+
+.topbar .navbar ul li div a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 1px;
 }
 
 .topbar .navbar ul li a {
@@ -122,7 +180,6 @@ body {
 
 .topbar .navbar ul li a:hover {
     color: #ffffff;
-    font-size: 15px;
 }
 
 .topbar .navbar button {
@@ -256,3 +313,4 @@ body {
     border-radius: 40px;
     cursor: pointer;
 }
+
