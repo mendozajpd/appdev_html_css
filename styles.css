@@ -6,16 +6,23 @@
 }
 
 body {
-  background-color: #2C0C0F;
+  background-color: #2c0c0f;
   font-family: "Inter", sans-serif;
+  justify-content: space-around;
+}
+
+.page {
+  /* display: flex; */
 }
 
 .sidebar {
+  box-sizing: border-box; /* Include padding in width calculation */
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 295px;
+  width: 17%;
+  min-width: 350px;
   background: linear-gradient(to bottom, #1b080a, #2d0d10);
   padding: 24px;
   border-right-style: solid;
@@ -33,12 +40,12 @@ body {
   display: inline-block;
   margin: 0 auto;
   padding-top: 15px;
-  width: 160px;
+  width: 180px;
 }
 
 .sidebar .navigation ul {
   list-style: none;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .sidebar .navigation ul li {
@@ -50,11 +57,6 @@ body {
   text-decoration: none;
   font-weight: 200;
   font-size: 30px;
-}
-
-.sidebar .navigation ul li .fa {
-  font-size: 20px;
-  margin-right: 10px;
 }
 
 .sidebar .navigation ul li a:hover {
@@ -92,37 +94,34 @@ body {
 }
 
 .main-container {
-  margin-left: 350px;
-  margin-bottom: 100px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-left: 17%; /* Adjust to match sidebar width */
+  max-width: 100%;
 }
 
 .topbar {
   display: flex;
   justify-content: flex-end;
-  background-color: #2C0C0F;
+  background-color: #2c0c0f;
+  height: 100px;
 }
 
 .topbar .logout {
+  display: flex;
+  align-items: center;
   color: #7a7a7a;
-  width: 20%;
   font-size: 18px;
   border-left-style: solid;
   border-width: 1px;
   border-color: #ffffff;
-  background-color: #2C0C0F;
-  padding-top: 40px;
-  padding-left: 40px;
-  justify-content: flex-start;
-}
-
-.topbar .logout span {
-    display: inline-block;
-    vertical-align: middle;
+  background-color: #2c0c0f;
+  padding-left: 3%;
+  padding-right: 5%;
 }
 
 .topbar .logout span img {
-    height: 30px;
-    vertical-align: text-bottom;
+  height: 30px;
+  vertical-align: middle;
 }
 
 .topbar .logout a {
@@ -130,6 +129,7 @@ body {
   font-weight: 500;
   font-size: 25px;
   text-decoration: none;
+  vertical-align: middle;
 }
 
 .topbar .logout a:hover {
@@ -140,8 +140,9 @@ body {
 }
 
 .topbar .navbar {
-  padding: 30px 25px;
-  padding-top: 45px;
+  display: flex;
+  align-items: center;
+  padding-right: 2%;
 }
 
 .topbar .navbar p {
@@ -149,6 +150,7 @@ body {
   list-style: none;
   font-weight: bold;
   font-size: 25px;
+  margin: 0;
 }
 
 .topbar .navbar ul {
@@ -204,47 +206,51 @@ body {
   background-color: #f2f2f2;
 }
 
-.spotify-playlists {
-  padding: 20px 40px;
+.content-body {
+  display: flexbox;
+}
+.content {
+  padding: 15px 40px;
+  flex-grow: 1;
 }
 
-.spotify-playlists h2 {
+.content h2 {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
-.spotify-playlists .list {
+.content .list {
   display: flex;
   gap: 20px;
   overflow: hidden;
+  justify-content: space-around;
+  /* background: #ffffff;
+  border-radius: 3px; */
 }
 
-.spotify-playlists .list .item {
-  min-width: 140px;
-  width: 160px;
+.content .list .item {
+  display: flex;
+  flex-direction: column;  /* Ensure items are stacked vertically */
+  align-items: center;  /* Center items horizontally */
+  max-height: 280px;
   padding: 15px;
-  background-color: #181818;
-  border-radius: 6px;
+  background-color: #ececec;
+  border-radius: 25px;
   cursor: pointer;
   transition: all ease 0.4s;
+  justify-content: center;
 }
 
-.spotify-playlists .list .item:hover {
-  background-color: #252525;
+.content .list .item:hover {
+  background-color: #ffffff;
 }
 
-.spotify-playlists .list .item img {
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.spotify-playlists .list .item .play {
+.content .list .item .play {
   position: relative;
 }
 
-.spotify-playlists .list .item .play .fa {
+.content .list .item .play .fa {
   position: absolute;
   right: 10px;
   top: -60px;
@@ -255,12 +261,12 @@ body {
   transition: all ease 0.4s;
 }
 
-.spotify-playlists .list .item:hover .play .fa {
+.content .list .item:hover .play .fa {
   opacity: 1;
   transform: translateY(-20px);
 }
 
-.spotify-playlists .list .item h4 {
+.content .list .item h4 {
   color: #ffffff;
   font-size: 14px;
   margin-bottom: 10px;
@@ -270,14 +276,10 @@ body {
   text-overflow: ellipsis;
 }
 
-.spotify-playlists .list .item p {
-  color: #989898;
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 500;
+.content .list .item .item-text {
+  margin-top: 10px; /* Adjust the top margin as needed */
 }
-
-.spotify-playlists hr {
+.content hr {
   margin: 70px 0px 0px;
   border-color: #636363;
 }
@@ -316,4 +318,28 @@ body {
   border: 0px;
   border-radius: 40px;
   cursor: pointer;
+}
+
+#userChart {
+  width: 450px;
+  height: 100%;
+}
+
+#userChart1 {
+  width: 750px;
+  height: 100%;
+}
+
+#userChart2 {
+  width: 450px;
+  height: 100%;
+}
+
+#analyticsLineChart {
+  width: 450px;
+  height: 80%;
+}
+#analyticsDoughnutChart {
+  width: 300px;
+  height: 80%;
 }
